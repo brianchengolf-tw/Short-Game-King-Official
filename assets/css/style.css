@@ -117,18 +117,31 @@ p{ margin:0 0 1em; }
 .brand-text{ font-family: var(--font-display); font-weight:700; font-size:1.15rem; color: var(--navy); display:flex; flex-direction:column; line-height:1.1; }
 .brand-text em{ font-style:normal; font-family: var(--font-utility); font-size:.6rem; letter-spacing:.18em; color: var(--terracotta); font-weight:600; }
 
-.main-nav ul{ display:flex; gap: 6px; align-items:center; }
+.main-nav ul{ display:flex; gap: 8px; align-items:center; }
 .main-nav > ul > li{ position:relative; }
 .main-nav a{
-  font-size:.92rem; font-weight:500; color: var(--navy);
-  padding: 10px 16px; border-radius: 4px;
-  transition: all .18s ease;
+  font-size:.9rem; font-weight:500; color: var(--navy);
+  padding: 12px 18px; border-radius: 6px;
+  transition: all .2s ease;
   display: inline-block;
   white-space: nowrap;
+  background: transparent;
+  border: 2px solid transparent;
 }
-.main-nav > ul > li > a{ border-bottom: 2px solid transparent; }
-.main-nav > ul > li > a:hover{ color: var(--terracotta); border-bottom-color: var(--terracotta); }
-.main-nav a.is-active{ color: var(--terracotta); border-bottom-color: var(--terracotta); font-weight:600; }
+.main-nav > ul > li > a{
+  background: rgba(29,47,85,.04);
+}
+.main-nav > ul > li > a:hover{
+  background: rgba(201,124,94,.08);
+  color: var(--terracotta);
+  border-color: var(--terracotta);
+}
+.main-nav a.is-active{
+  background: rgba(201,124,94,.12);
+  color: var(--terracotta);
+  border-color: var(--terracotta);
+  font-weight:600;
+}
 .has-dropdown .dropdown{
   position:absolute; top: 100%; left:0;
   background: var(--white); border-radius: var(--radius-lg); box-shadow: var(--shadow-card);
