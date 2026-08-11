@@ -43,38 +43,4 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  /* 短桿王官方社群媒體連結 */
-  var SOCIAL_LINKS = {
-    youtube: 'https://www.youtube.com/@brianchengolf_tw',
-    instagram: 'https://www.instagram.com/shortgameking_tw?igsh=MWJzM2I5MXhudzVlNw%3D%3D&utm_source=qr',
-    facebook: 'https://www.facebook.com/share/1QDHkkzdcK/?mibextid=wwXIfr',
-    line: 'https://lin.ee/q3Zmr3o'
-  };
-
-  function applyLink(id, url) {
-    var els = document.querySelectorAll('#' + id);
-    els.forEach(function (el) {
-      if (url) {
-        el.setAttribute('href', url);
-        el.setAttribute('target', '_blank');
-        el.setAttribute('rel', 'noopener');
-        el.style.cursor = 'pointer';
-        var tag = el.querySelector('.placeholder-tag');
-        if (tag) tag.remove();
-      }
-    });
-  }
-
-  // 套用所有社群媒體連結
-  ['footer-youtube', 'footer-instagram', 'footer-facebook', 'footer-line'].forEach(function (id) {
-    var key = id.replace('footer-', '');
-    applyLink(id, SOCIAL_LINKS[key]);
-  });
-
-  // 也檢查是否有不同命名的連結（例如在 header 或其他地方）
-  ['youtube-link', 'instagram-link', 'facebook-link'].forEach(function (id) {
-    var key = id.replace('-link', '');
-    applyLink(id, SOCIAL_LINKS[key]);
-  });
-
 });
