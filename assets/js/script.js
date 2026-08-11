@@ -58,15 +58,22 @@ document.addEventListener('DOMContentLoaded', function () {
         el.setAttribute('href', url);
         el.setAttribute('target', '_blank');
         el.setAttribute('rel', 'noopener');
+        el.style.cursor = 'pointer';
         var tag = el.querySelector('.placeholder-tag');
         if (tag) tag.remove();
       }
     });
   }
 
-  ['youtube-link', 'instagram-link', 'facebook-link',
-   'footer-youtube', 'footer-instagram', 'footer-facebook'].forEach(function (id) {
-    var key = id.replace('footer-', '').replace('-link', '');
+  // 套用所有社群媒體連結
+  ['footer-youtube', 'footer-instagram', 'footer-facebook', 'footer-line'].forEach(function (id) {
+    var key = id.replace('footer-', '');
+    applyLink(id, SOCIAL_LINKS[key]);
+  });
+
+  // 也檢查是否有不同命名的連結（例如在 header 或其他地方）
+  ['youtube-link', 'instagram-link', 'facebook-link'].forEach(function (id) {
+    var key = id.replace('-link', '');
     applyLink(id, SOCIAL_LINKS[key]);
   });
 
