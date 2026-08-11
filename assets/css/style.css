@@ -117,18 +117,27 @@ p{ margin:0 0 1em; }
 .brand-text{ font-family: var(--font-display); font-weight:700; font-size:1.15rem; color: var(--navy); display:flex; flex-direction:column; line-height:1.1; }
 .brand-text em{ font-style:normal; font-family: var(--font-utility); font-size:.6rem; letter-spacing:.18em; color: var(--terracotta); font-weight:600; }
 
-.main-nav ul{ display:flex; gap: 28px; }
+.main-nav ul{ display:flex; gap: 6px; align-items:center; }
 .main-nav > ul > li{ position:relative; }
-.main-nav a{ font-size:.95rem; font-weight:500; color: var(--navy); padding:8px 0; }
-.main-nav > ul > li > a:hover, .main-nav a.is-active{ color: var(--terracotta); }
+.main-nav a{
+  font-size:.92rem; font-weight:500; color: var(--navy);
+  padding: 10px 16px; border-radius: 4px;
+  transition: all .18s ease;
+  display: inline-block;
+  white-space: nowrap;
+}
+.main-nav > ul > li > a{ border-bottom: 2px solid transparent; }
+.main-nav > ul > li > a:hover{ color: var(--terracotta); border-bottom-color: var(--terracotta); }
+.main-nav a.is-active{ color: var(--terracotta); border-bottom-color: var(--terracotta); font-weight:600; }
 .has-dropdown .dropdown{
-  position:absolute; top: 100%; left:50%; transform: translateX(-50%);
+  position:absolute; top: 100%; left:0;
   background: var(--white); border-radius: var(--radius-lg); box-shadow: var(--shadow-card);
-  padding: 10px; min-width: 220px; opacity:0; visibility:hidden; translate: 0 6px;
+  padding: 8px; min-width: 200px; opacity:0; visibility:hidden; translate: 0 6px;
   transition: opacity .18s ease, translate .18s ease, visibility .18s ease;
+  z-index: 100;
 }
 .has-dropdown:hover .dropdown, .has-dropdown:focus-within .dropdown{ opacity:1; visibility:visible; translate:0 0; }
-.dropdown li a{ display:block; padding: 9px 12px; border-radius: 6px; font-size:.88rem; }
+.dropdown li a{ display:block; padding: 10px 14px; border-radius: 4px; font-size:.88rem; white-space: nowrap; }
 .dropdown li a:hover{ background: var(--cream); color: var(--terracotta); }
 
 .header-cta{ display:flex; align-items:center; gap: 10px; flex-shrink:0; }
