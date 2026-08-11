@@ -43,14 +43,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  /* ------------------------------------------------------------
-     待補充連結：之後補上真實連結時，只需更新下方變數即可，
-     所有頁面（含 footer）都會自動套用，不需要逐頁改 HTML。
-     ------------------------------------------------------------ */
+  /* 短桿王官方社群媒體連結 */
   var SOCIAL_LINKS = {
-    youtube: 'https://www.youtube.com/channel/UChmP-9U8Nu9OBqf0K7xBjWQ',
-    instagram: null, // 例如 'https://www.instagram.com/shortgameking_tw'
-    facebook: null   // 例如 'https://www.facebook.com/groups/xxxx'
+    youtube: 'https://www.youtube.com/@brianchengolf_tw',
+    instagram: 'https://www.instagram.com/shortgameking_tw?igsh=MWJzM2I5MXhudzVlNw%3D%3D&utm_source=qr',
+    facebook: 'https://www.facebook.com/share/1QDHkkzdcK/?mibextid=wwXIfr',
+    line: 'https://lin.ee/q3Zmr3o'
   };
 
   function applyLink(id, url) {
